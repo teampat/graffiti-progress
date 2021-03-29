@@ -18,7 +18,7 @@ export default defineComponent({
         >
           About Page
           <br />
-          <span class="text-indigo-600">Vite 2.x + Vue 3.x + Tailwind 2.x</span>
+          <span class="text-indigo-600">Vite 2.x + Vue 3.x + Vuex 4.x + Vue Router 4.x + Tailwind 2.x</span>
         </h2>
         <div class="flex mt-8 lg:flex-shrink-0 lg:mt-0">
           <div class="inline-flex rounded-md shadow">
