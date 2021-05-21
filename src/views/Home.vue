@@ -16,7 +16,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      percentage: 10
+      percentage: 20
     }
   },
   computed: {
@@ -44,7 +44,7 @@ body {
 
 .text-box {
   width: 100%;
-  top: 30%;
+  top: 35%;
   position: absolute;
   text-align: center;
   color: rgb(19, 19, 19);
