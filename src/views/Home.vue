@@ -3,7 +3,7 @@
     <div class="text-box">{{ percenteage }} %</div>
     <div class="flex items-center h-screen w-full bg-teal-lighter">
       <div
-        class="progress-box relative w-full m-8 rounded shadow-lg md:max-w-screen-lg md:mx-auto h-4/6 border-solid border-black"
+        class="progress-box relative w-full m-8 rounded shadow-lg md:max-w-screen-md md:mx-auto h-4/6 border-solid border-black"
       >
       <div class="inner" :style="cssProgress"></div>
       </div>
