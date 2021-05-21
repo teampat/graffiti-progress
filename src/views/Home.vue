@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="text-box">{{ percenteage }} %</div>
+    <div class="text-box">{{ percentage }} %</div>
     <div class="flex items-center h-screen w-full bg-teal-lighter">
       <div
         class="progress-box relative w-full m-8 rounded shadow-lg md:max-w-screen-md md:mx-auto h-4/6 border-solid border-black"
@@ -16,13 +16,13 @@ export default {
   name: 'Home',
   data() {
     return {
-      percenteage: 10
+      percentage: 10
     }
   },
   computed: {
     cssProgress() {
       return {
-        'height': `${(100 - this.percenteage)}%`
+        'height': `${(100 - this.percentage)}%`
       }
     }
   },
