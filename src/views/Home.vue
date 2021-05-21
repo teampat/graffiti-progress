@@ -64,7 +64,6 @@ body {
 }
 
 .inner {
-  // height: 90%;
   background: url("@/assets/inner.webp") no-repeat top;
   background-size: cover;
   filter: grayscale(100%) contrast(30%);
