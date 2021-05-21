@@ -1,36 +1,72 @@
-<script>
-import { defineComponent } from 'vue'
-import ButtonRepo from '@/components/ButtonRepo.vue'
-
-export default defineComponent({
-  components: { ButtonRepo },
-})
-</script>
-
 <template>
-  <main>
-    <div class="bg-gray-50">
+  <div class="home">
+    <div class="text-box">{{ percenteage }} %</div>
+    <div class="flex items-center h-screen w-full bg-teal-lighter">
       <div
-        class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
+        class="progress-box relative w-full m-8 rounded shadow-lg md:max-w-screen-lg md:mx-auto h-4/6 border-solid border-black"
       >
-        <h2
-          class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
-        >
-          Ready to dive in?
-          <br />
-          <span class="text-indigo-600">Vite 2.x + Vue 3.x + Vuex 4.x + Vue Router 4.x + Tailwind 2.x</span>
-        </h2>
-        <div class="flex mt-8 lg:flex-shrink-0 lg:mt-0">
-          <div class="inline-flex rounded-md shadow">
-            <router-link
-              to="/about"
-              class="inline-flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none"
-              >Next Page</router-link
-            >
-          </div>
-          <ButtonRepo />
-        </div>
+      <div class="inner" :style="cssProgress"></div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'Home',
+  data() {
+    return {
+      percenteage: 10
+    }
+  },
+  computed: {
+    cssProgress() {
+      return {
+        'height': `${(100 - this.percenteage)}%`
+      }
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+body {
+  background: url("@/assets/background.webp") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.home {
+  position: relative;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 70%, rgba(0,0,0,1) 100%);
+}
+
+.text-box {
+  width: 100%;
+  top: 30%;
+  position: absolute;
+  text-align: center;
+  color: rgb(19, 19, 19);
+  font-size: 9em;
+  z-index: 10;
+}
+
+.progress-box {
+  background: url("@/assets/inner.webp") no-repeat top;
+  background-size: cover;
+  filter: grayscale(0%); 
+  border-width: 5px;
+  border-top-width: 5px;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  border-left-width: 5px;
+}
+
+.inner {
+  // height: 90%;
+  background: url("@/assets/inner.webp") no-repeat top;
+  background-size: cover;
+  filter: grayscale(100%) contrast(30%);
+}
+</style>
